@@ -8,8 +8,16 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_article():
-	pass
+def add_article(article_link, article_topic, article_rating):
+	Knowledge_object = Knowledge(
+		article_link=article_link,
+	    article_topic=article_topic,
+	    topic_rating=article_rating)
+	session.add(Knowledge_object)
+	session.commit()
+
+add_article("https://en.wikipedia.org/wiki/Theology", "Theology", 8)
+	
 
 def query_all_articles():
 	pass
