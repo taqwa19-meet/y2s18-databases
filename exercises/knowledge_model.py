@@ -22,7 +22,7 @@ class Knowledge(Base):
 
     def __repr__(self):
         return ("If you want to learn about :{}, you should look at the Wikipedia article called :{}."
-				"We gave this article a rating of {} out of 10!").format(self.article_topic, self.article_link, self.topic_rating)
+				"We gave this article a rating of {} out of 10!").format(self.article_topic, self.article_link, self.topic_ratings)
 		#return (" article_link: {}\n"
 				#" article_topic: {}\n"
 				#" topic_rating: {}".format(

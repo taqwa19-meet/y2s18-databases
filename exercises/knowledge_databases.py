@@ -12,7 +12,7 @@ def add_article(article_link, article_topic, article_rating):
 	Knowledge_object = Knowledge(
 		article_link=article_link,
 	    article_topic=article_topic,
-	    topic_rating=article_rating)
+	    topic_ratings=article_rating)
 	session.add(Knowledge_object)
 	session.commit()
 
@@ -44,14 +44,16 @@ def delete_article_by_topic(topic):
 
 
 def delete_all_articles():
+	session.query(Knowledge).all().delete()
+	session.commit()   
+
 	
 
-def edit_article_rating(student_id,topic_rating):
-	student_object = session.query(
-       Student).filter_by(
-       name=name).first()
-   student_object.finished_lab = finished_lab
-   session.commit()
+def edit_article_rating(student_id,topic_ratings):
+	t = session.query(
+       Knowledge).filter_by(
+       topic_ratings=article_rating).all()
+    
 
 
 
