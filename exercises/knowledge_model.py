@@ -11,7 +11,7 @@ class Knowledge(Base):
     student_id=Column(Integer, primary_key=True)
     article_link=Column(String)
     article_topic=Column(String)
-    topic_rating=Column(Integer)
+    topic_ratings=Column(Integer)
 
 	# The first column will be the primary key
 	# The second column should be a string representing
@@ -27,7 +27,7 @@ class Knowledge(Base):
 				#" article_topic: {}\n"
 				#" topic_rating: {}".format(
 					#self.article_link, self.article_topic, self.topic_rating)
-x=Knowledge(article_link="https://en.wikipedia.org/wiki/Plastic_surgery", article_topic="Plastic_surgery", topic_rating=8)
-y=Knowledge(article_link="https://en.wikipedia.org/wiki/Theology", article_topic="Theology", topic_rating=9)
-print(x)
-print(y)
+# x=Knowledge(article_link="https://en.wikipedia.org/wiki/Plastic_surgery", article_topic="Plastic_surgery", topic_rating=8)
+# y=Knowledge(article_link="https://en.wikipedia.org/wiki/Theology", article_topic="Theology", topic_rating=9)
+# print(x)
+# print(y)

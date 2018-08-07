@@ -16,20 +16,51 @@ def add_article(article_link, article_topic, article_rating):
 	session.add(Knowledge_object)
 	session.commit()
 
-add_article("https://en.wikipedia.org/wiki/Theology", "Theology", 8)
+
 	
 
 def query_all_articles():
-	pass
+	article = session.query(
+       #Knowledge).filter_by(
+       Knowledge).all()
+	return article
 
-def query_article_by_topic():
-	pass
 
-def delete_article_by_topic():
-	pass
+def query_article_by_topic(topic):
+	#Knowledge).filter_by(
+      # article_topic=their_name).all()
+	x=session.query(Knowledge).filter_by(
+       article_topic=topic).all()
+	return x
+
+
+
+def delete_article_by_topic(topic):
+	session.query(Knowledge).filter_by(
+       article_topic=topic).delete()
+	session.commit()
+
+
+
 
 def delete_all_articles():
-	pass
+	
 
-def edit_article_rating():
-	pass
+def edit_article_rating(student_id,topic_rating):
+	student_object = session.query(
+       Student).filter_by(
+       name=name).first()
+   student_object.finished_lab = finished_lab
+   session.commit()
+
+
+
+
+
+add_article("https://en.wikipedia.org/wiki/Theology", "Theology", 8)
+
+print(query_all_articles())
+
+delete_article_by_topic("Theology")
+
+print(query_all_articles())
